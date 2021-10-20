@@ -58,3 +58,9 @@ for (var i = 1; i<=100; i++) {
         console.log(i)
     }
 }
+
+//
+function secondToLast(arr){
+    return  arr[arr.length - 2];
+}
+console.log(secondToLast(["First", "Second", "Not Last", "Last"]));
