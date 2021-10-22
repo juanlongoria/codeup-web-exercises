@@ -42,7 +42,7 @@ function typeCheck(input) {
 }
 
 console.log('input is an empty string: ', typeCheck(''));
-console.log('input isNaN(): boolean ' , typeCheck(isNaN());
+//console.log('input isNaN(): boolean ' , typeCheck(isNaN());
 console.log(typeCheck(!false * 3));
 console.log(typeCheck(4 + '4'));
 
@@ -64,3 +64,11 @@ function secondToLast(arr){
     return  arr[arr.length - 2];
 }
 console.log(secondToLast(["First", "Second", "Not Last", "Last"]));
+
+//
+ function moveToEnd(array) {
+
+    return array.push(array.shift());
+ }
+
+ console.log(moveToEnd([1, 2, 3, 4, 5, 6]));
