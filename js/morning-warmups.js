@@ -72,3 +72,14 @@ console.log(secondToLast(["First", "Second", "Not Last", "Last"]));
  }
 
  console.log(moveToEnd([1, 2, 3, 4, 5, 6]));
+
+ //10-25
+var charmander = {
+    name: 'charmander',
+    description: 'Lizard category pokemon',
+    height: {
+        feet: 3,
+        iches: 4
+    },
+    type: ['fire', 'flying']
+};
