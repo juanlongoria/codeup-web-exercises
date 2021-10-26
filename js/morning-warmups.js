@@ -83,3 +83,40 @@ var charmander = {
     },
     type: ['fire', 'flying']
 };
+
+//10-26
+var wrestlers = [
+    {
+        name: "Bret Hart",
+        nationality: "Canadian"
+    }, {
+        name: "Shawn Michaels",
+        nationality: "American"
+    }, {
+        name: "Christian Cage",
+        nationality: "Canadian"
+    }, {
+        name: "Keiji Mutoh",
+        nationality: "Japanese"
+    }, {
+        name: "Eddy Guerrero",
+        nationality: "American"
+    }, {
+        name: "Owen Hart",
+        nationality: "Canadian"
+    }
+];
+
+function canadian(arr) {
+    //var bucket = [];
+    arr.forEach(function (wrestler) {
+        if (wrestler.nationality === "Canadian") {
+            console.log(wrestler.name)
+            //bucket.push(wrestler);
+        }
+    });
+    //return bucket;
+}
+canadian(wrestlers);
+//console.log(canadian(wrestlers));
+
