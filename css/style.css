@@ -2,3 +2,49 @@
     color:purple;
     text-decoration: underline;
 }
+
+.description {
+    text-decoration: underline darkgray;
+    text-align: center;
+    text-indent: 0em;
+}
+
+header {
+    text-decoration: underline;
+}
+
+body {
+    background-color: gray;
+    background-image: url("/img/double-bubble.png");
+    background-repeat: repeat-y;
+    background-position-x: center;
+}
+
+.type-list {
+    list-style: lower-latin;
+}
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+.table-info {
+    text-decoration: underline;
+    font-size: 24px;
+}
+
+a:link {
+    color: teal;
+}
+
+a:visited {
+    color: sandybrown;
+}
+
+a:hover {
+    color: fuchsia;
+}
+
+a:active {
+    color: silver;
+}
+

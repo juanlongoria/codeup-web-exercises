@@ -3,28 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <title>Intro to Elements</title>
+    <link rel="stylesheet" href="css/selectors-properties.css">
 </head>
 <body>
 <main>
-<Header>
+<header>
     <h1>Charmander</h1>
     <br>
     <hr>
-</Header>
-    <section Id = "main image">
+</header>
+    <section id = "main image">
     <img src="img/charmander.png" alt="charmander image">
     </section>
     <input type="text">
         <p>Number #: <span class="red-font"><strong>004</strong></span></p>
     <section id="type">
         <h2>Type</h2>
-            <ul>
+            <ul class="orange-bg type-list">
                 <li>Lizard</li>
                 <li>Fire</li>
             </ul>
     </section>
     <table>
-        <tr>
+        <tr class="table-info">
             <th>Height</th>
             <th>Category</th>
             <th>Weight</th>
@@ -43,8 +44,9 @@
     <!--Hyperlink to take me to section with the ID of type-->
     <a href="#type">Type</a>
 <footer>
-    <a href="#Top">Back to Top</a>
+    <a href="#Top" id="back-to-top">Back to Top</a>
 </footer>
+<h1 class="orange-bg underline" id="blue-bg">This is also red.</h1>
 
 <a href="https://www.pokemon.com/us/pokedex/charmander">Learn More About Charmander</a>
 </body>
