@@ -1,0 +1,40 @@
+.flex-container {
+    display: flex;
+    height: 20vh;
+    width: 70vw;
+    margin: 10vh auto;
+    background: #989898;
+    border: 5px solid black;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-item {
+    background: rebeccapurple;
+    color: antiquewhite;
+    padding: .5em;
+
+}
+
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+}
+nav {
+    background: #333333;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+nav a {
+    text-decoration: none;
+    color: white;
+    font-family: Verdana;
+}
+nav a:hover {
+    background: black;
+}
