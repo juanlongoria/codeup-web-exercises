@@ -132,5 +132,50 @@ var area = Math.round(Math.PI * (Math.pow(circle.radius, 2)));
 
 console.log(area);
 
+//11/02
 
+var groceries = [
+    {
+        name: "carrots",
+        quantity: 5
+    },{
+        name: "yams",
+        quantity: 50
+    },{
+        name: "oranges",
+        quantity: 9
+    },{
+        name: "onions",
+        quantity: 2
+    },{
+        name: "cucumbers",
+        quantity: 6
+    },{
+        name: "potatoes",
+        quantity: 8
+    }
+];
 
+// function getHighestQuantityObject(groceries) {
+//     groceries.forEach(function (foodItem)  {
+//         if (foodItem.quantity === 50) {
+//             console.log(foodItem.name)
+//         }
+//     });
+// }
+//  getHighestQuantityObject(groceries);
+
+function getHighestQuantityObject(arr) {
+    var obj = {
+        name: "any",
+        quantity: 0
+    }
+    arr.forEach(function(el) {
+        if(el.quantity > obj.quantity) {
+            obj = el;
+        }
+    });
+        return obj;
+}
+
+console.log(getHighestQuantityObject(groceries));
