@@ -1,0 +1,19 @@
+/*@media screen and (max-width:600px) {
+    .container {
+        display: none;
+    }
+}*/
+/*.jumbotron-fluid {
+    background-size: cover;
+}*/
+
+h1 {
+    display: flex;
+    justify-content: center;
+    color: darkgrey;
+    background-color: ghostwhite;
+    width: content-box;
+    height: min-content;
+    opacity: 0.75;
+
+}
