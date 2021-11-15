@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BOM</title>
+</head>
+<body>
+
+<h1>BOM Lecture</h1>
+<script>
+    BOM is the browser object model
+
+    var userResp = window.prompt("Give me something");
+    window.alert(userResp);
+
+    setTimeout(function() {
+        alert("hello!");
+        }, 3000);
+
+    setTimeout(function () {
+        var email = prompt("Give us your email for discounts and more!");
+        alert(email);
+    }, 5000);
+
+    var intervalID = setInterval(function() {
+        console.log(intervalID);
+        var canGoToSplashmore = confirm("Will you take us to Mt. Splashmore?");
+        if (canGoToSplashmore) {
+            clearInterval(intervalID)
+        }
+        }, 4000);
+        alert("Will you take us to Mt. Splashmore?");
+    }, 400);
+
+    var pokes = 0;
+
+    var intervalID = window.setInterval(function() {
+        console.log(intervalID);
+        var stillThere = confirm("Frost Bank Alert!\nYou've been idle for too long. Click Ok to continue banking.");
+        if (!stillThere) {
+            clearInterval(intervalID);
+            window.location = "https://rbfcu.org" //this will link us to an external website
+            //window.open("https://frostbank.com", "_blank"); //this will open link in new page, allow pop-ups
+            //window.location = "/bootstrap-grid-lec.html" // internal link
+        } else {
+        pokes++;
+        if (pokes === 5) {
+            clearInterval(intervalID);
+            window.location = "https://frostbank.com/";
+        }
+        }
+    },5000);
+
+    if (confirm("Will you take us to Mt. Splashmore?")) {
+        alert("Thanks Dad")
+    } else {
+        location.reload(true);
+    }
+
+</script>
+</body>
+</html>

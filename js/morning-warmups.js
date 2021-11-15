@@ -216,3 +216,98 @@ function sortByName(arr) {
 
 console.log(sortByName(products));
 
+//11/09
+//Write a function in JavaScript that takes in an array of objects and returns the object
+// with the lowest height property. Consider the following array to test your code.
+
+var bBallPlayers = [
+    {
+        name: "Hakeem Olajuwon",
+        height: 213
+    }, {
+        name: "Muggsy Bogues",
+        height: 160
+    }, {
+        name: "Chris Paul",
+        height: 183
+    }, {
+        name: "Bol Bol",
+        height: 218
+    }, {
+        name: "Moochie Norris",
+        height: 185
+    }, {
+        name: "Manu Ginobili",
+        height: 198
+    }
+];
+
+//...this got tallest player
+// function getLowestHeight(arr) {
+//     var obj = {
+//         name: "anything",
+//         height: 0
+//     }
+//     arr.forEach(function(el) {
+//         if(el.height > obj.height) {
+//             obj = el;
+//         }
+//     });
+//     return obj;
+// }
+//
+// console.log(getLowestHeight(bBallPlayers));
+
+function getLowestHeight(arr) {
+    var play = {height: Number.MAX_VALUE};
+    arr.forEach(function (lot) {
+        if (lot.height < play.height) {
+            play = lot;
+        }
+    });
+    return play;
+
+}
+console.log(getLowestHeight(bBallPlayers));
+
+//11/10
+
+var myCharacter = {
+    name: 'obijuan-kanobi',
+    hitPoints: 100,
+    class: 'Warrior',
+    abilities: {
+        attack: function(obj) {
+            console.log(myCharacter.name + " hit " + obj.name + " for " + myCharacter.weapon.damage + " damage!")
+            obj.hitPoints -= myCharacter.weapon.damage;
+            console.log(obj.name + " has " + obj.hitPoints + " hit points left!")
+        },
+    },
+    magicPoints: 0,
+    weapon: {
+        name: 'Silver Sabre',
+        damage: 16,
+        type: 'sword'
+    }
+}
+
+var enemy = {
+    name: 'Savage Orc',
+    hitPoints: 100,
+    class: 'Warrior',
+    magicPoints: 0,
+}
+
+myCharacter.abilities.attack(enemy);
+myCharacter.abilities.attack(enemy);
+myCharacter.abilities.attack(enemy);
+myCharacter.abilities.attack(enemy);
+
+//11/12 return random item from array
+
+//randomEl(["rock", "paper", "scissors", "lizard", "spock"])
+function randomEl(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+}
+
+console.log(randomEl(["rock", "paper", "scissors", "lizard", "spock"]));
