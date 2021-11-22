@@ -4,10 +4,17 @@
     <meta charset="UTF-8">
     <title>Login</title>
     <link rel="stylesheet" href="css/login.css">
+
+    <style>
+        #error-message {
+            color: red;
+        }
+    </style>
 </head>
 <body>
+
 <main>
-    <form action="#">
+    <form method="POST" action="https://request-inspector.glitch.me/">
         <fieldset class="width-80">
             <div class="form-group">
                 <label for="username" class="form-label">Username</label>
@@ -17,9 +24,35 @@
                 <label for="password" class="form-label">Password</label>
                 <input type="password" id="password" name="password" class="form-control">
             </div>
-            <button class="btn btn-block">Login</button>
+            <small id="error-message">Username or Password incorrect</small>
+            <br>
+            <button id="btn-submit" class="btn btn-block">Login</button>
         </fieldset>
     </form>
+
+
+
+    <script>
+        var submitButton = document.querySelector('#btn-submit');
+        var errorMessage = document.querySelector('#error-message');
+        var usernameInput = document.querySelector('#username')
+        var passwordInput = document.querySelector('#password')
+
+        var username = 'regulus2021';
+        var password = 'gocodeup';
+
+        submitButton.addEventListener('click', function(event){
+            event.preventDefault();
+            if(usernameInput.value !== username && passwordInput.value !== password) {
+                errorMessage.style.display = 'inline-block';
+            }
+        })
+
+
+        // $(document).ready(function() {
+        //
+        // });
+    </script>
 </main>
 </body>
 </html>

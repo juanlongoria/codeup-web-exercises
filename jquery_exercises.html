@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery Exercises</title>
+</head>
+<body>
+
+<h1 id="backDrop">Example Page</h1>
+<div class="important">
+    <h3>NOTICE</h3>
+    <p id="inc-size">This is an important message!</p>
+</div>
+
+<!--JQUERY Exercise-->
+
+    <h1 id="mainHeading" class="codeup">For The Exercise</h1>
+<div class="salutation">
+    <p>Hello, World!<span class="insideText codeup">My name is....</span></p>
+
+<ul id="mainList mainHeading" class="list codeup">
+    <li><a href="#"> Example1</a></li>
+    <li><a href="#"> Example2</a></li>
+    <li><a href="#"> Example3</a></li>
+</ul>
+</div>
+
+<!--End of Exercise-->
+
+<div class="not-important">
+    <h2>Lorem Ipsum</h2>
+    <p>
+        Lorem ipsum dolor sit amet, incididunt ut <span class="important">labore et dolore magna aliqua.</span>, quis ut aliquip ex ea commodo.
+    </p>
+</div>
+<p class="important">This is also very important.</p>
+
+
+
+
+
+
+
+<!--JQuery CDN(bottom of Body)-->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<!--JQuery Script(bottom of Body)-->
+<!--<script src="/js/jquery-2.2.4.js"></script>-->
+
+<script type="text/javascript" src="js/my-custom-javascript.js"></script>
+
+<script>
+    //JQUERY Exercise
+    //Alert the contents of element, only can alert one id
+    alert($('#mainHeading').html())
+    // alert($('#mainList').html())
+    // var mainHeading=$('h1#mainHeading')
+    // var
+    // mainHeading.html('hello there');
+    $('#mainHeading').css('border', 'solid 1px black')
+    $('#mainList').css('font-family', 'Comic Sans, sans-serif')
+    $('.codeup').css('border', 'solid 1px red')
+    $('li').css('font-size', '50px')
+    // $('h1,p,li').css('background-color', 'lightcyan')
+    // $('h1').css('background-color', 'lightcyan')
+    // $('p').css('background-color', 'lightcyan');
+    // $('li').css('background-color', 'lightcyan');
+    var highlighted = $('h1,p,li')
+    highlighted.css('background-color', 'lightcyan')
+    alert($('h1').html())
+    // for(var j=0; j< $('h1').length; j++) {
+    //     alert($())
+    // } NOT WORKING
+    console.log($('h1, p, li'))
+
+    //JQUERY MOUSE EVENTS EXERCISE
+    //Background Color Change Mouse Event WORKS
+
+    var backGround = $('#backDrop');
+
+    backGround.click(function(event) {
+        console.log(event);
+        backGround.css('background-color', 'grey');
+
+    //Increase Text Size Mouse Event Working
+        $('p').dblclick(function() {
+            $(this).css('font-size', '18px');
+        })
+
+
+        // We can access the innerHTML and style properties using the event object that is being passed through our callback function.
+        // event.target.innerHTML = 'Do I have to wear a mask on the moon?'
+
+        //Hover Mouse Event WORKING
+        $('a').hover(function() {
+            $(this).css('color', 'red');
+        }, function() {
+            $(this).css('color','black');
+        })
+
+
+
+
+
+
+
+
+
+
+    })
+
+</script>
+
+
+</body>
+</html>
