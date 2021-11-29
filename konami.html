@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Konami Code</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/5bdcb73ea0.js" crossorigin="anonymous"></script>
+
+</head>
+<body class="d-flex backgroundImage" style="background-image: url(img/ffvii.webp); background-size: cover; background-position: center;">
+<h1>Konami Code</h1>
+<h1 style="align: right; margin-top: 15em; margin-left: 5em">PRESS START (space bar)</h1>
+
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<script src="/js/jquery.js"></script>
+<script>
+    "use strict";
+
+    // $(document).keyup(function(event){
+    //     console.log(event.keyCode);
+
+
+
+        // a key map of allowed keys
+        var allowedKeys = {
+            37: 'left',
+            38: 'up',
+            39: 'right',
+            40: 'down',
+            65: 'a',
+            66: 'b'
+        };
+
+// the 'official' Konami Code sequence
+        var konamiCode = ['up', 'up', 'down', 'down', 'left', 'right', 'left', 'right', 'b', 'a'];
+
+// a variable to remember the 'position' the user has reached so far.
+        var konamiCodePosition = 0;
+
+// add keydown event listener
+        document.addEventListener('keydown', function(e) {
+            // get the value of the key code from the key map
+            var key = allowedKeys[e.keyCode];
+            // get the value of the required key from the konami code
+            var requiredKey = konamiCode[konamiCodePosition];
+
+            // compare the key with the required key
+            if (key == requiredKey) {
+
+                // move to the next key in the konami code sequence
+                konamiCodePosition++;
+
+                // if the last key is reached, activate cheats
+                if (konamiCodePosition == konamiCode.length) {
+                    activateCheats();
+                    konamiCodePosition = 0;
+                }
+            } else {
+                konamiCodePosition = 0;
+            }
+        });
+
+        function activateCheats() {
+            // document.body.style.backgroundImage = url("/img/charmander.png");
+            //
+            // var audio = new Audio('audio/pling.mp3');
+            // audio.play();
+
+            alert("cheats activated");
+        }
+    // });
+</script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+</body>
+</html>

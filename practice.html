@@ -8,17 +8,38 @@
 
 </head>
 <body>
+<p>Please type something into this form</p>
+
+<form>
+    <input type="text" id="textfield" name="textfield" placeholder="Type Here"/>
+</form>
+
+
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
 <script>
     $(document).ready(function() {
+
+        // $('#textfield').keydown(function() {
+        //     alert('A key was pushed down!');
+        $('#textfield').keyup(function() {
+            alert('A key was released!');
+
+            $('clickable').off('click');
+        });
+
+
+
+
+
     });
 </script>
-
-
-
-
-
-
 
 
 
