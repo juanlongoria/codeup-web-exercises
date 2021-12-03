@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Mapbox Exercise</title>
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet">
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
+  <style>
+    body { margin: 0; padding: 0; }
+    #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+  </style>
+</head>
+<body>
+<style>
+  #marker {
+    background-image: url('img/rocksan.png');
+    background-size: 55px;
+    background-position: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  #marker2 {
+    background-image: url('img/trilogy.jpg');
+    background-size: 55px;
+    background-position: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  #marker3 {
+    background-image: url('img/trilogy.jpg');
+    background-size: 55px;
+    background-position: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  #marker4 {
+    background-image: url('img/pluckers.jpg');
+    background-size: 55px;
+    background-position: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  #marker5 {
+    background-image: url('img/pluckers.jpg');
+    background-size: 55px;
+    background-position: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  #marker6 {
+    background-image: url('img/pluckers.jpg');
+    background-size: 55px;
+    background-position: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .mapboxgl-popup {
+    max-width: 200px;
+  }
+</style>
+
+<div id="map"></div>
+<script src="js/keys.js"></script>
+<script>
+  mapboxgl.accessToken = MAPBOX_KEY;
+  const rockSan = [-98.58876, 29.56378];
+  const chamaGaucha = [-98.497737, 29.61026];
+  const trilogyPizza = [-98.495918, 29.624718];
+  const pluckers = [-98.58255, 29.5913];
+  const wingDaddies = [-98.527163, 29.515352];
+  const burgerBoy = [-98.58255, 29.5913];
+  const dhalia = [-98.497737, 29.61026];
+  const ginzaRamen = [-98.325397, 29.57583];
+
+  const map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/light-v10',
+    center: rockSan,
+    zoom: 10
+  });
+
+  // the geocode method from mapbox-geocoder-utils.js
+  // geocode("151 W Bitters Rd, San Antonio, TX 78216", MAPBOX_KEY).then(function(result) {
+  //   console.log(result);
+  //   map.setCenter(result);
+  //   map.setZoom(10);
+  // });
+
+  // create the popup
+  const popup = new mapboxgl.Popup({ offset: 25 }).setText(
+          'RockSan Thai Restaurant & Sushi Bar' + '    '+ '5238 De Zavala'
+  );
+  const popup2 = new mapboxgl.Popup({ offset: 25 }).setText(
+          'Chama Gaucha' + '    '+ '18318 Sonterra Pl'
+  );
+  const popup3 = new mapboxgl.Popup({ offset: 25 }).setText(
+          'Trilogy Pizza' + '    '+ '19141 Stone Oak Pkwy #113'
+  );
+  const popup4 = new mapboxgl.Popup({ offset: 25 }).setText(
+          'Pluckers' + '    '+ '15651 McDermott Freeway I-10'
+  );
+  const popup5 = new mapboxgl.Popup({ offset: 25 }).setText(
+          'Wing Daddies' + '    '+ '2120 Jackson Keller Rd'
+  );
+
+  // create DOM element for the marker
+  const el = document.createElement('div');
+  el.id = 'marker';
+
+  const el2 = document.createElement('div');
+  el2.id = 'marker2';
+
+  const el3 = document.createElement('div');
+  el3.id = 'marker3';
+
+  const el4 = document.createElement('div');
+  el4.id = 'marker4';
+
+  const el5 = document.createElement('div');
+  el5.id = 'marker5';
+
+  // create the marker
+  new mapboxgl.Marker(el)
+          .setLngLat(rockSan)
+          .setPopup(popup) // sets a popup on this marker
+          .addTo(map);
+
+  // create the marker
+  new mapboxgl.Marker(el2)
+          .setLngLat(chamaGaucha)
+          .setPopup(popup2) // sets a popup on this marker
+          .addTo(map);
+
+  // create the marker
+  new mapboxgl.Marker(el3)
+          .setLngLat(trilogyPizza)
+          .setPopup(popup3) // sets a popup on this marker
+          .addTo(map);
+
+  // create the marker
+  new mapboxgl.Marker(el4)
+          .setLngLat(pluckers)
+          .setPopup(popup4) // sets a popup on this marker
+          .addTo(map);
+
+  // create the marker
+  new mapboxgl.Marker(el5)
+          .setLngLat(wingDaddies)
+          .setPopup(popup5) // sets a popup on this marker
+          .addTo(map);
+</script>
+
+</body>
+</html>
