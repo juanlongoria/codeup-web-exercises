@@ -35,7 +35,7 @@
     "use strict";
     // TODO: Create an AJAX GET request for the file under data/inventory.json
 
-    $.get('data/inventory.json.txt').done(function (info) {
+    $.get('data/inventory.json').done(function (info) {
         console.log(info);
 //         $.get(info.held_items[0].item.url).done(function(data) {
 //             console.log(data.flavor_text_entries[6].text);
@@ -50,7 +50,7 @@
     //       HINT: Your data should come back as a JSON object; use console.log() to inspect
     //             its contents and fields
     //       HINT: You will want to target #insertProducts for your new HTML elements
-    $.get('data/inventory.json.txt').done(function (products) {
+    $.get('data/inventory.json').done(function (products) {
         $("#insertProducts").html("");
         products.forEach(function(product) {
             var h1 = "<h1>" + product.title + "</h1>";
